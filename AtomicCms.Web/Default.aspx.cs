@@ -14,8 +14,10 @@ namespace AtomicCms.Web
 
             string originalPath = Request.Path;
             HttpContext.Current.RewritePath(Request.ApplicationPath, false);
-            IHttpHandler httpHandler = new MvcHttpHandler();
-            httpHandler.ProcessRequest(HttpContext.Current);
+            //IHttpHandler httpHandler = new MvcHttpHandler();
+            //httpHandler.ProcessRequest(HttpContext.Current);
+            var httpContext = HttpContext.Current;
+            httpContext.Server.TransferRequest(originalPath, true);
             HttpContext.Current.RewritePath(originalPath, false);
         }
     }

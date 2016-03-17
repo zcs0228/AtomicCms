@@ -13,6 +13,7 @@ using NHibernate.Criterion;
 
 namespace AtomicCms.Data
 {
+    //²Ö´¢Ä£Ê½
     public class AtomicCmsRepository : NHSession, IAtomicCmsDataRepository
     {
         #region IAtomicCmsDataRepository Members

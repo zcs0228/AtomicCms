@@ -14,6 +14,12 @@ namespace AtomicCms.Services
             this.userData = userData;
         }
 
+        /// <summary>
+        /// 登录方法
+        /// </summary>
+        /// <param name="userName">用户名</param>
+        /// <param name="password">密码</param>
+        /// <returns></returns>
         public CmsUser Login(string userName, string password)
         {
             CmsUser user = userData.Login(userName, password);

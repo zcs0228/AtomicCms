@@ -89,6 +89,8 @@ namespace AtomicCms.Web
             InitializeLogging();
 
             SetAdoNetAppenderConnectionStrings("AtomicCms");
+
+            //IoC容器StructureMap注册实例
             StructureMapRegistration.RegisterAll();
 
             AreaRegistration.RegisterAllAreas();
@@ -97,6 +99,7 @@ namespace AtomicCms.Web
             ViewEngines.Engines.Add(new CustomRazorViewEngine());
             ViewEngines.Engines.Add(new CustomWebFormViewEngine());
 
+            //注册自定义ControllerFactory
             ControllerBuilder.Current.SetControllerFactory(new AtomicCmsControllerFactory());
         }
 
