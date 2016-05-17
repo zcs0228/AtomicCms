@@ -5,6 +5,7 @@ namespace AtomicCms.Data
     using Configuration = NHibernate.Cfg.Configuration;
     /// <summary>
     /// Singelton class to support Session in View.
+    /// 单例模式
     /// </summary>
     public class SessionManager
     {
@@ -46,6 +47,7 @@ namespace AtomicCms.Data
 
         #region Nested type: NestedSessionManager
 
+        //类中类
         private class NestedSessionManager
         {
             internal static readonly SessionManager sessionManager =
